@@ -22,6 +22,8 @@ defmodule Pensieve.MixProject do
   defp deps do
     [
       {:sshex, "~> 2.1"},
+
+      # Docs
       {:ex_doc, "~> 0.23"},
       {:earmark, "~> 1.4"}
     ]

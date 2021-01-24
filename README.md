@@ -1,11 +1,16 @@
 # Pensieve
 
-**TODO: Add description**
+    "One simply siphons the excess thoughts from one's mind, pours them into the basin, and examines them at one's leisure. It becomes easier to spot patterns and links, you understand, when they are in this form."
+
+    —Albus Dumbledore explaining what a Pensieve is.
+
+## Overview
+Backup network device configurations. Similar to Rancid, 
+Oxidized, etc...
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `pensieve` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `pensieve` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -14,8 +19,4 @@ def deps do
   ]
 end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/pensieve](https://hexdocs.pm/pensieve).
 
