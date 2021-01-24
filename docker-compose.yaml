@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    volumes:
+      - ./lib:/app/lib:cached
+      - ./deps:/app/deps:cached
+      - ./test:/app/test:cached
+      - ./mix.exs:/app/mix.exs:cached
+      - ./mix.lock:/app/mix.lock:cached
