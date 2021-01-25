@@ -28,10 +28,10 @@ defmodule Pensieve.MixProject do
   defp deps do
     [
       {:sshex, "~> 2.1"},
+      {:jason, "~> 1.2"},
 
-      # Docs
       {:ex_doc, "~> 0.23", only: :dev, runtime: false},
-      {:earmark, "~> 1.4", only: :dev, runtime: false}
+      {:earmark, "~> 1.4", only: :dev, runtime: false},
     ]
   end
 
