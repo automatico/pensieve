@@ -6,7 +6,7 @@ defmodule Pensieve.Helpers do
   end
 
   def devices do
-    cwd = File.cwd!
+    cwd = File.cwd!()
     {:ok, file} = File.open("#{cwd}devices.json")
     data = Jason.decode(file)
     data
