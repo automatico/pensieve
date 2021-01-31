@@ -1,0 +1,24 @@
+# https://stackoverflow.com/questions/40688950/how-to-execute-a-command-via-ssh-in-elixir
+# https://erlang.org/doc/apps/ssh/configure_algos.html
+# https://gist.github.com/fredhsu/6324345
+
+:ssh.start()
+
+{:ok, conn} = :ssh.connect('192.168.255.151', 22,
+  silently_accept_hosts: true,
+  user: 'admin' |> to_charlist(),
+  password: 'Juniper' |> to_charlist(),
+  user_interaction: false,
+  modify_algorithms: [{:append, [{:kex, [:'diffie-hellman-group-exchange-sha1']}]}]
+)
+
+{:ok, chan} = :ssh_connection.session_channel(conn, :infinity)
+:success = :ssh_connection.exec(conn, chan, 'show run', :infinity)
+# :success = :ssh_connection.ptty_alloc(conn, chan, [], :infinity)
+# :ok = :ssh_connection.send(conn, chan, 'show ver' |> to_charlist(), :infinity)
+
+for _ <- 0..3 do
+  receive do
+    {:ssh_cm, ^conn, value} -> IO.inspect(value)
+  end  
+end
