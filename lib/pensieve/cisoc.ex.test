@@ -13,11 +13,11 @@
 )
 
 {:ok, chan} = :ssh_connection.session_channel(conn, :infinity)
-:success = :ssh_connection.exec(conn, chan, 'show run', :infinity)
+:success = :ssh_connection.exec(conn, chan, 'show configuration | display set', :infinity)
 # :success = :ssh_connection.ptty_alloc(conn, chan, [], :infinity)
 # :ok = :ssh_connection.send(conn, chan, 'show ver' |> to_charlist(), :infinity)
 
-for _ <- 0..3 do
+for _ <- 0..99 do
   receive do
     {:ssh_cm, ^conn, value} -> IO.inspect(value)
   end  
